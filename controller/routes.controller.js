@@ -96,16 +96,6 @@ class RoutesController {
         completion_date,
         id,
       } = req.body;
-      console.log('route obj: ', {start_city,
-        end_city,
-        distance,
-        departure_date,
-        requested_vehicle_type,
-        expected_revenue,
-        vehicle_id,
-        status,
-        completion_date,
-        id,})
       const result = await Route.update(
         {
           start_city,
