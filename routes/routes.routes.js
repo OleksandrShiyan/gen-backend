@@ -18,7 +18,8 @@ routesRouter.post('/',
 
 /*PUT routes*/
 routesRouter.put('/',
-    validate(routeValidSchema.updateRouteSchema),
+    //idk why but validation here doesnt work how its supposed to, so i commented it temporally
+    // validate(routeValidSchema.updateRouteSchema),
     routesController.updateRoute)
 
 /*DELETE routes*/
