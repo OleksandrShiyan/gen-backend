@@ -25,7 +25,6 @@ module.exports = {
   },
   getRouteStatuses: async () => {
     const routeStatuses = await RouteStatus.findAll();
-    console.log('route statuses: ', routeStatuses)
     return routeStatuses;
   },
   createRoute: async (routeObj) => {
