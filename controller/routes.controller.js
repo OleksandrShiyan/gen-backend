@@ -1,19 +1,6 @@
 const HttpStatus = require('http-status-codes');
-const Route = require('../models/Route');
-const RouteStatus = require('../models/RouteStatus');
-const VehicleType = require('../models/VehicleType');
-const Vehicle = require('../models/Vehicle');
 
 const routeService = require('../services/route.service');
-
-Route.belongsTo(RouteStatus, { foreignKey: 'status' });
-RouteStatus.hasOne(Route, { foreignKey: 'status' });
-
-Route.belongsTo(VehicleType, { foreignKey: 'requested_vehicle_type' });
-VehicleType.hasOne(Route, { foreignKey: 'requested_vehicle_type' });
-
-Route.belongsTo(Vehicle, { foreignKey: 'status' });
-Vehicle.hasOne(Route, { foreignKey: 'status' });
 
 class RoutesController {
   async getAllRoutes(req, res) {
@@ -87,7 +74,6 @@ class RoutesController {
 
   async updateRoute(req, res) {
     try {
-      console.log('controller 1 body: ', req.body);
       const {
         start_city,
         end_city,
